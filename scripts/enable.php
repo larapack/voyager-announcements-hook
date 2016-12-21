@@ -34,5 +34,7 @@ $permission = Permission::firstOrCreate([
 $role = Role::where('name', 'admin')->first();
 
 if (!is_null($role)) {
-    $role->permissions()->attach($permission);
+    if ($role->permissions()->where('id', $permission->id)->count() == 0) {
+        $role->permissions()->attach($permission);
+    }
 }
