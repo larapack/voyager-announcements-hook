@@ -1,0 +1,11 @@
+{
+  "provider": "Larapack\VoyagerAnnouncements\VoyagerAnnouncementsHookServiceProvider",
+  "scripts": {
+    "enable": [
+      "php artisan tinker {HOOKS}/voyager-announcements/scripts/enable.php"
+    ],
+    "disable": [
+      "php artisan tinker {HOOKS}/voyager-announcements/scripts/disable.php"
+    ]
+  }
+}
