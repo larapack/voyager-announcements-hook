@@ -2,8 +2,8 @@
 
 namespace Larapack\VoyagerAnnouncements;
 
-use Illuminate\Routing\Router;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 class VoyagerAnnouncementsHookServiceProvider extends ServiceProvider
@@ -11,7 +11,7 @@ class VoyagerAnnouncementsHookServiceProvider extends ServiceProvider
     public function register()
     {
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'voyager-announcements');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'voyager-announcements');
     }
 
     public function boot(Dispatcher $events)
@@ -25,7 +25,7 @@ class VoyagerAnnouncementsHookServiceProvider extends ServiceProvider
     {
         $router->get('announcements', [
             'uses' => '\\'.Controllers\AnnouncementController::class.'@index',
-            'as' => 'announcements',
+            'as'   => 'announcements',
         ]);
     }
 }
